@@ -1,0 +1,263 @@
+/* Portada Video */
+.contenedor-video{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    z-index: -3;
+    left: 0;
+}
+.video{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+}
+.capa-efecto{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: -2;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.8);
+    /* max-width: 100%; */
+   
+}
+.logo{
+    float: left;
+    position: relative;
+    width: 200px;
+    height: 150px;
+}
+.home{
+    float: center;
+    position: relative;
+    width: 400px;
+    height: 350px;
+}
+
+/* NAV BAR */
+nav {
+    color: #fff;
+    background-color: #ec7b4f;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+  } 
+.logo-nav{
+    width: 150px;
+    height: 70px;
+}
+
+/* MAIN */
+.usuario{
+    background-image:url(../img/action-2178406_1920.jpg);
+    width: 100%;
+    height: 700px;
+    font-size: 3rem;
+    color: aliceblue;
+    text-align: right;
+}
+.grupo{
+    background-image:url(../img/motorcycle-rally-597914_1920.jpg);
+    width: 100%;
+    height: 700px;
+    font-size: 3rem;
+    color: aliceblue;
+    text-align: right;
+}
+.rutas{
+    background-image:url(../img/road-3478977.jpg);
+    width: 100%;
+    height: 1000px;
+    font-size: 3rem;
+    color: aliceblue;
+    text-align: right;
+}
+.perfil{
+    background-image:url(../img/motorcycle-933022.jpg);
+    width: 100%;
+    height: 1000px;
+    font-size: 3rem;
+    color: rgb(3, 22, 56);
+    text-align: right;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: url("img/bg-patt.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    font-family: "Josefin Sans",sans-serif;
+}
+#wrapper {
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100% !important;
+}
+section {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1100px;
+    margin: 0 auto;
+    max-width: 1440px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100% !important;
+}
+
+#bloque1 {
+    background-image: url("../img/california-210913.jpg");
+}
+#bloque2 {
+    background-image: url("../img/foto_moto_1.jpg");
+}
+#bloque3 {
+    background-image: url("../img/foto_moto_2.jpg");
+}
+#bloque4 {
+    background-image: url("../img/foto_moto_3.jpg");
+}
+h1 {
+    background-color: #02223a;
+    bottom: 0;
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+    font-size: 5em;
+    font-weight: bold;
+    margin-top: 50px;
+    opacity: 0.76;
+    text-align: center;
+    text-shadow: 1px 1px 1px #666;
+    text-transform: uppercase;
+    width: 100%;
+}
+/* h2 {
+    color: #fff;
+    font-size: 5em;
+    font-weight: bold;
+    margin-top: 5em;
+    opacity: 0.85;
+    text-align: center;
+    text-shadow: 1px 1px 1px #ccc;
+    text-transform: uppercase;
+} */
+#logo {
+    display: block;
+    margin: 0em auto 0;
+    opacity: 0.8;
+    width: 650px;
+}
+#bloque2 p {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 7em auto;
+    max-width: 800px;
+    padding: 1.5em;
+}
+#bloque3 p {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 7em auto;
+    max-width: 800px;
+    padding: 1.5em;
+}
+.flip-box {
+    background-color: transparent;
+    width: 500px;
+    height: 300px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+    margin-left: 900px;
+    margin-top: 200px;
+    margin-right: 50px;
+  }
+  
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .flip-box-front {
+    
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-box-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .perfil{
+      background-image: url(../img/img_cards/miperfil.png);
+      width: 500px;
+      height: 300px;
+  }
+  .perfil-back{
+      background-image: url(../img/img_cards/miperfil_BN.png);
+      width: 500px;
+      height: 300px;
+  }
+.amigos{
+    background-image: url(../img/img_cards/grupos.png);
+    width: 500px;
+    height: 300px;
+}
+.amigos-back{
+    background-image: url(../img/img_cards/grupos_BN.png);
+    width: 500px;
+    height: 300px;
+}
+.rutas{
+    background-image: url(../img/img_cards/rutas.png);
+    width: 500px;
+    height: 300px;
+}
+.rutas-back{
+    background-image: url(../img/img_cards/rutas_BN.png);
+    width: 500px;
+    height: 300px;
+}
+.campo{
+    color:white;
+}
+/* FOOTER */
+.pie{
+  align-content: center;
+  
+}
+.redes{
+  width: 50p;
+  height: 50px;
+}
+.page-footer {
+  padding-top: 100px;
+  color: #fff;
+  background-color: #E7854C;
+  /* #a5050b */
+}
