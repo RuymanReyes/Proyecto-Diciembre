@@ -19,7 +19,7 @@
     width: 100%;
     left: 0;
     z-index: -2;
-    height: 100%;
+    height: 500%;
     background-color: rgba(0, 0, 0,0.8);
     /* max-width: 100%; */
    
@@ -89,7 +89,7 @@ nav {
     padding: 0;
 }
 body {
-    background: url("img/bg-patt.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    /* background: url("img/bg-patt.png") repeat scroll 0 0 rgba(0, 0, 0, 0); */
     font-family: "Josefin Sans",sans-serif;
 }
 #wrapper {

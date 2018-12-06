@@ -17,14 +17,8 @@ app.get('/prueba', function (req, res) {
 
 app.post('/vulcan/add', function (req, res) {
     let body = req.body;
-    let sql = `INSERT INTO rutas (nombre, origen, destino, descripcion) VALUES ('${body.name}',
-     '${body.origin}', '${body.destiny}','${body.description}')`;
-    // vamos a crear una variable de scope local,
-    // si queremos añadir
-    // un valor extra lo hacemos igual que name,
-    //si lo que queremos es guardar todo lo podemos meter en una variable, let  body= rq.body
-    //hay que hacer una comprobación de todos los datos que estamos enviando y recibiendo para 
-    //comprobar que recibimos. para evitar problemas. estos datos los recogemos del cuerpo de la petición. 
+    let sql = `INSERT INTO rutas (nombre, origen, destino, descripcion, fecha) VALUES ('${body.name}',
+     '${body.origin}', '${body.destiny}','${body.description}','${body.date}')`;    
     con.query(sql, function (err, result) {
         if (err) {
             res.send(err);
@@ -37,6 +31,7 @@ app.post('/vulcan/add', function (req, res) {
                 origen: body.origin,
                 destino: body.destiny,
                 descripcion: body.description,
+                fecha: body.date,
             }
             console.log(proyecto)
             res.send(proyecto);
@@ -74,47 +69,46 @@ app.post('/vulcan/delete', function (req, res) {
     });
 })
 //MODIFICAR REGISTROS 
+// mirar como lo hace en un solo update. antes de hacerlo comprobar que los campos no esten en blanco. 
+
 app.post('/vulcan/update', function (req, res) {
+    let body= req.body;
     let sql = '';
-    if (req.body.description){
-        sql = `UPDATE rutas set descripcion='${req.body.description}'
-    where id = '${req.body.id}'`;
-    }
-    else if(req.body.origin){
-        sql = `UPDATE rutas set origen='${req.body.origin}'
-    where id = '${req.body.id}'`;
-    }
-    else if(req.body.destiny){
-        sql = `UPDATE rutas set destino='${req.body.destiny}'
-    where id = '${req.body.id}'`;
-    }
-     else{
-        sql = `UPDATE rutas set nombre='${req.body.name}'
-    where id = '${req.body.id}'`;
-    }
+     
+    if(body.origin && body.destiny && body.description && body.date &&body.name){
+        sql= `UPDATE rutas set origen = '${body.origin}', destino = '${body.destiny}', descripcion = '${body.description}', fecha = '${body.date}', nombre='${body.name}' where id ='${body.id}'`;
+    } 
+        
     con.query(sql, function (err, result) {
-        if (err) {
-            res.send(err);
-        }
-        else {
-            let proyecto = {
-                item: "",
-                result: result
-            };
-            req.body.name ? proyecto.item = req.body.name : proyecto.item = req.body.description //expresion ternarias
-            console.log(proyecto)
-            res.send(proyecto);
-        }
+            if (err) {
+                res.send(err);
+            }
+            else {
+                let proyecto = {
+                    nombre: req.body.name,
+                    destino: req.body.destiny,
+                    descripcion: req.body.descripcion,
+                    fecha:req.body.date,
+                    origen:req.body.origin
+                }
+   
+                res.send(proyecto);
+            }
+        });
     });
-});
-
-
-
-
-
-
 
 
 
 module.exports = con;
 module.exports = app; 
+
+
+
+
+
+// JOSE PREGUNTAR 
+
+// la fecha no la inserta, undifine, sé que tengo un error chorra en algún lado, no lo encuentro por mucho que lo miro
+// que me explicque lo de serialize no llego a entender de donde sale el #insert, 
+
+//conseguir que se me modifique la base de datos. no hay que usar un if sino una validacion de si el campo esta vacio... pase hasta que lo consiga el cambio 
