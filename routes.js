@@ -33,7 +33,7 @@ app.post('/vulcan/add', function (req, res) {
                 descripcion: body.description,
                 fecha: body.date,
             }
-            console.log(proyecto)
+ 
             res.send(proyecto);
         }
     });
@@ -48,7 +48,7 @@ app.get('/vulcan', function (req, res) { // el nombre de proyecto puede ser cual
         }
         else {
             res.send(result);
-            console.log
+         
         }
     });
 })
@@ -78,24 +78,43 @@ app.post('/vulcan/update', function (req, res) {
     if(body.origin && body.destiny && body.description && body.date &&body.name){
         sql= `UPDATE rutas set origen = '${body.origin}', destino = '${body.destiny}', descripcion = '${body.description}', fecha = '${body.date}', nombre='${body.name}' where id ='${body.id}'`;
     } 
-        
+      
     con.query(sql, function (err, result) {
-            if (err) {
-                res.send(err);
-            }
-            else {
-                let proyecto = {
-                    nombre: req.body.name,
-                    destino: req.body.destiny,
-                    descripcion: req.body.descripcion,
-                    fecha:req.body.date,
-                    origen:req.body.origin
-                }
-   
-                res.send(proyecto);
-            }
-        });
+        if (err) {
+            res.send(err);
+        }
+        else {
+            let proyecto = {
+                item: "",
+                result: result
+            };
+            req.body.name ? proyecto.item = req.body.name : proyecto.item = req.body.category
+            console.log(proyecto);
+            res.send(proyecto);
+        }
     });
+});
+
+
+
+
+    // con.query(sql, function (err, result) {
+    //         if (err) {
+    //             res.send(err);
+    //         }
+    //         else {
+    //             let proyecto = {
+    //                 nombre: req.body.name,
+    //                 destino: req.body.destiny,
+    //                 descripcion: req.body.descripcion,
+    //                 fecha:req.body.date,
+    //                 origen:req.body.origin
+    //             }
+   
+    //             res.send(proyecto);
+    //         }
+    //     });
+    // });
 
 
 
@@ -109,6 +128,4 @@ module.exports = app;
 // JOSE PREGUNTAR 
 
 // la fecha no la inserta, undifine, sé que tengo un error chorra en algún lado, no lo encuentro por mucho que lo miro
-// que me explicque lo de serialize no llego a entender de donde sale el #insert, 
-
 //conseguir que se me modifique la base de datos. no hay que usar un if sino una validacion de si el campo esta vacio... pase hasta que lo consiga el cambio 
