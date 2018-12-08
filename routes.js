@@ -10,6 +10,9 @@ app.get('/rutas', function (req, res) {
 app.get('/prueba', function (req, res) {
     res.render('prueba');
 });
+app.get('/google', function (req, res) {
+    res.render('experimento626-3');
+});
 
 //añadir proyectos
 //proyectos es una ruta quele damos que nosotros queremos, la unica requerida es que quiera 
@@ -17,6 +20,7 @@ app.get('/prueba', function (req, res) {
 
 app.post('/vulcan/add', function (req, res) {
     let body = req.body;
+    console.log (body)
     let sql = `INSERT INTO rutas (nombre, origen, destino, descripcion, fecha) VALUES ('${body.name}',
      '${body.origin}', '${body.destiny}','${body.description}','${body.date}')`;    
     con.query(sql, function (err, result) {
@@ -96,28 +100,6 @@ app.post('/vulcan/update', function (req, res) {
 });
 
 
-
-
-    // con.query(sql, function (err, result) {
-    //         if (err) {
-    //             res.send(err);
-    //         }
-    //         else {
-    //             let proyecto = {
-    //                 nombre: req.body.name,
-    //                 destino: req.body.destiny,
-    //                 descripcion: req.body.descripcion,
-    //                 fecha:req.body.date,
-    //                 origen:req.body.origin
-    //             }
-   
-    //             res.send(proyecto);
-    //         }
-    //     });
-    // });
-
-
-
 module.exports = con;
 module.exports = app; 
 
@@ -126,6 +108,3 @@ module.exports = app;
 
 
 // JOSE PREGUNTAR 
-
-// la fecha no la inserta, undifine, sé que tengo un error chorra en algún lado, no lo encuentro por mucho que lo miro
-//conseguir que se me modifique la base de datos. no hay que usar un if sino una validacion de si el campo esta vacio... pase hasta que lo consiga el cambio 

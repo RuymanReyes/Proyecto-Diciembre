@@ -2,31 +2,7 @@ $(document).ready(function () {
     let boton = $('#enviarInsert');
     let lista = $('#listaProyectos .row');
 
-
-    //agregarlo a pantalla 
-    $.get('http://localhost:3000/vulcan/', function (response) {
-        response.forEach(ruta => {
-            lista.append( // nos añade la carta cuando agregamos la ruta, contiene dos botones para modificar y borrar
-                '<div class="col s12 m6 l4 xl3">' +
-                '<div class="card" id="' + ruta.id + '">' +
-                '<div class="card-image">' +
-                '<img src="../img/elegir1.jpg">' +
-                '<span class="card-title">' + ruta.nombre + '</span>' +
-                '<a class="eliminarProyecto btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete</i></a>'
-                + '</div>'
-                + '<div class="card-content">' +
-                '<p> Origen: <span class="origen">' + ruta.origen + '</span></p>' +
-                '<p> Destino: <span class="destino">' + ruta.destino + '</span></p>' +
-                '<p> descrición: <span class="descripcion">' + ruta.descripcion + '</span></p>' +
-                '<p> fecha: <span class="fecha">' + ruta.fecha + '</span></p>' +
-                '<a class=" modificar waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>' +
-                '</div>' +
-                '</div>');
-
-        });
-    });
-
-
+ 
     //eliminar el evento con un boton.
     lista.on('click', '.eliminarProyecto', function () {
 
@@ -101,7 +77,20 @@ $(document).ready(function () {
     
 
     boton.on('click', function () {
-        let data = $('#insertModal').serialize();
+        let data = $('#insert').serialize();
+        console.log(data)
+        let nombre = $('#nombre').val();
+        let origen= $('#origen').val();
+        let destino = $ ('#destino').val();
+        let descripcion = $ ('#descripción').val()
+        let fecha = $ ('#fecha').val()
+        let error= "";
+        if (!nombre||nombre==""||!origen||origen==""||!destino|| destino ==""|| !descripcion || descripcion == ""|| !fecha||fecha == ""){
+            error= "Por favor revise sus datos"
+            $('.error').append(error)
+        }
+        else{
+         
         $.post('http://localhost:3000/vulcan/add', data, function (ruta) {
             lista.append(
                 '<div class="col s12 m6 l4 xl3">' +
@@ -122,5 +111,29 @@ $(document).ready(function () {
                 '</div>')
 
         });
+    }
     });
+
+//agregarlo a pantalla 
+$.get('http://localhost:3000/vulcan/', function (response) {
+    response.forEach(ruta => {
+        lista.append( // nos añade la carta cuando agregamos la ruta, contiene dos botones para modificar y borrar
+            '<div class="col s12 m6 l4 xl3">' +
+            '<div class="card" id="' + ruta.id + '">' +
+            '<div class="card-image">' +
+            '<img src="../img/elegir1.jpg">' +
+            '<span class="card-title">' + ruta.nombre + '</span>' +
+            '<a class="eliminarProyecto btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete</i></a>'
+            + '</div>'
+            + '<div class="card-content">' +
+            '<p> Origen: <span class="origen">' + ruta.origen + '</span></p>' +
+            '<p> Destino: <span class="destino">' + ruta.destino + '</span></p>' +
+            '<p> descrición: <span class="descripcion">' + ruta.descripcion + '</span></p>' +
+            '<p> fecha: <span class="fecha">' + ruta.fecha + '</span></p>' +
+            '<a class=" modificar waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>' +
+            '</div>' +
+            '</div>');
+
+    });
+});
 });

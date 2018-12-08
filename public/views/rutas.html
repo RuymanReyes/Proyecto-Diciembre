@@ -45,12 +45,17 @@
     </div>
              <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
+<!-- COMIENZO DEL FORMULARIO DE REGISTRO PARA CREAR RUTAS -->
+
+
     <div class="row formulario" style="z-index:1">
         <h1 class="col xl12 l12 m12 s12 center-aling">Crea tus rutas</h1>
+        <!-- introduce aquí el error de validación -->
+        <div class=" error col 12 l12 m12 s12 center-aling red-text text-dark-3" style="font-size:30px; text-align: center" ></div>
         <form id="insert">
-            <div class="col xl6">
+            <div class="col xl6">s
                 <div class="input-field ">
-                    <input placeholder="Inserte un nombre de la ruta" name="name" id="destino" type="text" class="white-text validate">
+                    <input placeholder="Inserte un nombre de la ruta" name="name" id="nombre" type="text" class="white-text validate">
                     <label for="name">Nombre:</label>
                 </div>
                 <div class="input-field">
@@ -111,13 +116,18 @@
 
     <div id="listaProyectos">
         <div class="row">
-
         </div>
     </div>
-    <script src="js/lib/jquery-3.3.1.min.js"></script>
+  
+
+
+     <script src="js/lib/jquery-3.3.1.min.js"></script>
+<!-- PREPARATIVOS PARA LA API GOOGLE MAPS  -->
+    <!-- <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0u6OxGV5-ZrORirsAQKlcVGJLnoSclwA&callback=initMap">
+    </script> -->
     <script src="js/materialize.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/mainPpa.js"></script>
 
 </body>
 

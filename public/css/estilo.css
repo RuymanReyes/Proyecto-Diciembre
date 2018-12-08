@@ -50,7 +50,7 @@ nav {
     height: 70px;
 }
 
-/* MAIN */
+/* MAIN version 1 al final hay que quitarlo si no lo usamos */
 .usuario{
     background-image:url(../img/action-2178406_1920.jpg);
     width: 100%;
@@ -83,13 +83,14 @@ nav {
     color: rgb(3, 22, 56);
     text-align: right;
 }
-
+/* FIN INDEX OPCIONAL */
+/* COmienza el index parallax */
 * {
     margin: 0;
     padding: 0;
 }
 body {
-    /* background: url("img/bg-patt.png") repeat scroll 0 0 rgba(0, 0, 0, 0); */
+    background: url("../img/Texture-Background.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
     font-family: "Josefin Sans",sans-serif;
 }
 #wrapper {
@@ -113,15 +114,35 @@ section {
 
 #bloque1 {
     background-image: url("../img/california-210913.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
 #bloque2 {
     background-image: url("../img/foto_moto_1.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
 #bloque3 {
     background-image: url("../img/foto_moto_2.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
 #bloque4 {
     background-image: url("../img/foto_moto_3.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
 h1 {
     background-color: #02223a;
@@ -230,34 +251,397 @@ h1 {
 }
 .amigos-back{
     background-image: url(../img/img_cards/grupos_BN.png);
+    /* background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
     width: 500px;
     height: 300px;
 }
 .rutas{
     background-image: url(../img/img_cards/rutas.png);
+    /* background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
     width: 500px;
     height: 300px;
 }
 .rutas-back{
     background-image: url(../img/img_cards/rutas_BN.png);
+    /* background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
     width: 500px;
     height: 300px;
 }
 .campo{
     color:white;
 }
-/* FOOTER */
-.pie{
-  align-content: center;
-  
+.tittle{
+    margin-top: 100px;
 }
-.redes{
-  width: 50p;
-  height: 50px;
+.tittle-back{
+    margin-top: 100px;
+    font-size: 3.56rem;
 }
-.page-footer {
-  padding-top: 100px;
-  color: #fff;
-  background-color: #E7854C;
-  /* #a5050b */
-}
+
+/* MAPAS GOOGLE */
+#right-panel {
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+  }
+
+  #right-panel select, #right-panel input {
+    font-size: 15px;
+  }
+
+  #right-panel select {
+    width: 100%;
+  }
+
+  #right-panel i {
+    font-size: 12px;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #map {
+    height: 100%;
+    width: 50%;
+  }
+  #right-panel {
+    float: right;
+    width: 48%;
+    padding-left: 2%;
+  }
+  #output {
+    font-size: 11px;
+  }
+
+  /* MEDIA QUERY */
+  @media screen and (max-width:320px){
+    .flip-box {
+        background-color: transparent;
+        width: 200px;
+        height: 50px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        margin-left: 30px;
+        margin-top: 150px;
+        margin-right: 50px;
+      }
+      .perfil{
+        background-image: url(../img/img_cards/miperfil.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 250px;
+        height: 150px;
+      }
+   
+    .perfil-back{
+        background-image: url(../img/img_cards/miperfil_BN.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 250px;
+        height: 150px;
+    }
+    .amigos{
+        background-image: url(../img/img_cards/grupos.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 250px;
+        height: 150px;
+    }
+    .amigos-back{
+        background-image: url(../img/img_cards/grupos_BN.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 250px;
+        height: 150px;
+    }
+
+    .rutas{
+        background-image: url(../img/img_cards/rutas.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 250px;
+        height: 150px;
+    }
+    .rutas-back{
+        background-image: url(../img/img_cards/rutas_BN.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 250px;
+        height: 150px;
+    }
+    .tittle{
+        margin-top: 50px;
+    }
+    .tittle-back{
+        margin-top: 50px;
+        font-size: 2.56rem;
+    }
+  }
+
+
+@media screen and (max-width:370px) and (min-width:321px)
+  {
+    .flip-box {
+        background-color: transparent;
+        width: 200px;
+        height: 50px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        margin-left: 25px;
+        margin-top: 150px;
+        margin-right: 30px;
+      }
+      .perfil{
+        background-image: url(../img/img_cards/miperfil.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 290px;
+        height: 180px;
+      }
+    .perfil-back{
+        background-image: url(../img/img_cards/miperfil_BN.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 290px;
+        height: 180px;
+    }
+    .amigos{
+        background-image: url(../img/img_cards/grupos.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 290px;
+        height: 180px;
+    }
+    .amigos-back{
+        background-image: url(../img/img_cards/grupos_BN.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 290px;
+        height: 180px;
+    }
+
+    .rutas{
+        background-image: url(../img/img_cards/rutas.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 290px;
+        height: 180px;
+    }
+    .rutas-back{
+        background-image: url(../img/img_cards/rutas_BN.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 290px;
+        height: 180px;
+    }
+    .tittle{
+        margin-top: 70px;
+    }
+    .tittle-back{
+        margin-top: 70px;
+        font-size: 3.56rem;
+    }
+  }
+
+    @media screen and (max-width:812px) and (min-width:371px)
+  {
+    .flip-box {
+        background-color: transparent;
+        width: 200px;
+        height: 50px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        margin-left: 10px;
+        margin-top: 150px;
+        margin-right: 30px;
+      }
+      .perfil{
+        background-image: url(../img/img_cards/miperfil.png);
+        width: 350px;
+        height: 230px;
+      }
+    .perfil-back{
+        background-image: url(../img/img_cards/miperfil_BN.png);
+        width: 350px;
+        height: 230px;
+    }
+    .amigos{
+        background-image: url(../img/img_cards/grupos.png);
+        width: 350px;
+        height: 230px;
+    }
+    .amigos-back{
+        background-image: url(../img/img_cards/grupos_BN.png);
+        width: 350px;
+        height: 230px;
+    }
+
+    .rutas{
+        background-image: url(../img/img_cards/rutas.png);
+        width: 350px;
+        height: 230px;
+    }
+    .rutas-back{
+        background-image: url(../img/img_cards/rutas_BN.png);
+
+        height: 230px;
+    }
+    .tittle{
+        margin-top: 90px;
+    }
+    .tittle-back{
+        margin-top: 90px;
+        font-size: 3.56rem;
+    }   
+  }
+    @media screen and (max-width:900px) and (min-width:813px)
+  {
+    .flip-box {
+        background-color: transparent;
+        width: 200px;
+        height: 50px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        margin-left: 420px;
+        margin-top: 150px;
+        margin-right: 30px;
+      }
+      .perfil{
+        background-image: url(../img/img_cards/miperfil.png);
+        width: 385px;
+        height: 250px;
+      }
+    .perfil-back{
+        background-image: url(../img/img_cards/miperfil_BN.png);
+;
+        width: 385px;
+        height: 250px;
+    }
+    .amigos{
+        background-image: url(../img/img_cards/grupos.png);
+        width: 385px;
+        height: 250px;
+    }
+    .amigos-back{
+        background-image: url(../img/img_cards/grupos_BN.png);
+        width: 385px;
+        height: 250px;
+    }
+
+    .rutas{
+        background-image: url(../img/img_cards/rutas.png);
+        width: 385px;
+        height: 250px;
+    }
+    .rutas-back{
+        background-image: url(../img/img_cards/rutas_BN.png);
+        width: 385px;
+        height: 250px;
+    }
+    .tittle{
+        margin-top: 90px;
+    }
+    .tittle-back{
+        margin-top: 90px;
+        font-size: 3.56rem;
+    }   
+  }
+   
+  @media screen and (max-width:1024px) and (min-width:901px)
+  {
+    .flip-box {
+        background-color: transparent;
+        width: 500px;
+        height: 300px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        margin-left: 400px;
+        margin-top: 200px;
+        margin-right: 50px;
+      }
+      .perfil{
+        background-image: url(../img/img_cards/miperfil.png);
+        width: 500px;
+        height: 300px;
+      }
+    .perfil-back{
+        background-image: url(../img/img_cards/miperfil_BN.png);
+        width: 500px;
+        height: 300px;
+    }
+    .amigos{
+        background-image: url(../img/img_cards/grupos.png);
+        width: 500px;
+        height: 300px;
+    }
+    .amigos-back{
+        background-image: url(../img/img_cards/grupos_BN.png);
+        width: 500px;
+        height: 300px;
+    }
+
+    .rutas{
+        background-image: url(../img/img_cards/rutas.png);
+        width: 500px;
+        height: 300px;
+    }
+    .rutas-back{
+        background-image: url(../img/img_cards/rutas_BN.png);
+        width: 500px;
+        height: 300px;
+    }
+    .tittle{
+        margin-top: 100px;
+    }
+    .tittle-back{
+        margin-top: 100px;
+        font-size: 3.56rem;
+    } 
+  }
+   
+    @media screen and (max-width:1100px) and (min-width:1025px)
+  {
+    .flip-box {
+        margin-left: 550px;
+    }
+  }
+    @media screen and (max-width:1400px) and (min-width:1101px)
+  {
+    .flip-box {
+        margin-left: 900x;
+    }
+  }
