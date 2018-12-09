@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/materialize.css">
     <link rel="stylesheet" href="../css/estilo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Finger+Paint|Frijole|Gamja+Flower|Gloria+Hallelujah|Indie+Flower|Permanent+Marker|Rock+Salt|Unlock" rel="stylesheet">
     <title>Vulcan Route</title>
 </head>
 
@@ -16,26 +17,45 @@
     <!-- NAV BARR -->
 
     <ul id="slide-out" class="sidenav">
-        <li>
-            <div class="user-view">
-                <div class="background">
-                    <img src="img/road-3478977.jpg" style="width:100%; height:100%">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="img/road-3478977.jpg" style="width:100%; height:100%">
+                    </div>
+                    <a href="#user"><img class="circle" src="img/paralax/moto3.png" style="width:100%; height:100%; padding-left: 75px; padding-top: 50px;"></a>
+                    <a href="#name"><span class="white-text name">John Doe</span></a>
+                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                 </div>
-                <a href="#user"><img class="circle" src="img/paralax/moto3.png" style="width:100%; height:100%; padding-left: 75px; padding-top: 50px;"></a>
-                <a href="#name"><span class="white-text name">John Doe</span></a>
-                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-            </div>
-        </li>
-        <li><a class="waves-effect" href="#!"><i class="material-icons">cloud</i>Mi Perfil</a></li>
-        <li><a class="waves-effect" href="#!">Mis Amigos</a></li>
-        <!-- <li>
-                  <div class="divider"></div>
-              </li>
-              <li><a class="subheader">Subheader</a></li> -->
-        <li><a class="waves-effect" href="#!">Rutas</a></li>
-        <li><a class="waves-effect" href="#!">Retos</a></li>
-        <li><a class="waves-effect" href="#!">Descubre</a></li>
-    </ul>
+            </li>
+            <li><a class="waves-effect" href="http://localhost:3000/perfil"><i class="material-icons">cloud</i>Mi Perfil</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Amigos</a></li>
+            <li><a class="waves-effect" href="#!">Mis Amigos</a></li>
+            <li><a class="waves-effect" href="#!">Crea un grupo</a></li>
+            <li><a class="waves-effect" href="#!">Invita a tus Amigos</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Rutas</a></li>
+            <li><a class="waves-effect" href="http://localhost:3000/rutas#">Rutas</a></li>
+            <ul>
+                <li><a href="http://localhost:3000/rutas#">Tus Rutas</a></li>
+                <li><a href="http://localhost:3000/rutas#">Descubre</a></li>
+                <li><a href="http://localhost:3000/rutas#">Mapas</a></li>
+            </ul>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Retos</a></li>
+            <li><a class="waves-effect" href="#!">Retos</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Garaje</a></li>
+            <li><a class="waves-effect" href="http://localhost:3000/garaje">Garaje</a></li>
+        </ul>
    
     <div class="contenedor-video ">
         <video class="responsive-video" autoplay loop muted src="../img/Pexels Videos 1333384.mp4"></video>
@@ -43,13 +63,13 @@
 
     <div class="capa-efecto">
     </div>
-             <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <a href="#" data-target="slide-out" class="sidenav-trigger btn tooltipped" data-position="bottom" data-tooltip="Abrir el Menú Lateral"><i class="material-icons">menu</i></a>
 
 <!-- COMIENZO DEL FORMULARIO DE REGISTRO PARA CREAR RUTAS -->
 
 
     <div class="row formulario" style="z-index:1">
-        <h1 class="col xl12 l12 m12 s12 center-aling">Crea tus rutas</h1>
+        <h1 class=" titular col xl12 l12 m12 s12 center-aling">Crea tus rutas</h1>
         <!-- introduce aquí el error de validación -->
         <div class=" error col 12 l12 m12 s12 center-aling red-text text-dark-3" style="font-size:30px; text-align: center" ></div>
         <form id="insert">
@@ -128,6 +148,7 @@
     </script> -->
     <script src="js/materialize.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/mainPpa.js"></script>
 
 </body>
 

@@ -1,0 +1,72 @@
+
+/* CAJON DESASTRE EN DONDE METEMOS LO QUE USAREMOS EN EL FUTURO */
+
+/* MAIN version 1 al final hay que quitarlo si no lo usamos */
+.usuario{
+    background-image:url(../img/action-2178406_1920.jpg);
+    width: 100%;
+    height: 700px;
+    font-size: 3rem;
+    color: aliceblue;
+    text-align: right;
+}
+.grupo{
+    background-image:url(../img/motorcycle-rally-597914_1920.jpg);
+    width: 100%;
+    height: 700px;
+    font-size: 3rem;
+    color: aliceblue;
+    text-align: right;
+}
+.rutas{
+    background-image:url(../img/road-3478977.jpg);
+    width: 100%;
+    height: 1000px;
+    font-size: 3rem;
+    color: aliceblue;
+    text-align: right;
+}
+.perfil{
+    background-image:url(../img/motorcycle-933022.jpg);
+    width: 100%;
+    height: 1000px;
+    font-size: 3rem;
+    color: rgb(3, 22, 56);
+    text-align: right;
+}
+
+/* MAPAS GOOGLE  ESTo Es para el futuro */
+#right-panel {
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+  }
+
+  #right-panel select, #right-panel input {
+    font-size: 15px;
+  }
+
+  #right-panel select {
+    width: 100%;
+  }
+
+  #right-panel i {
+    font-size: 12px;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #map {
+    height: 100%;
+    width: 50%;
+  }
+  #right-panel {
+    float: right;
+    width: 48%;
+    padding-left: 2%;
+  }
+  #output {
+    font-size: 11px;
+  }

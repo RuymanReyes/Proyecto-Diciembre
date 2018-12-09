@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="css/materialize.min.css"> -->
+    <link rel="stylesheet" href="../css/materialize.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/estilo2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Finger+Paint|Frijole|Gamja+Flower|Gloria+Hallelujah|Indie+Flower|Permanent+Marker|Rock+Salt|Unlock"
+        rel="stylesheet">
+    <title>Vulcan Route</title>
+</head>
+
+<body>
+    <!-- NAV BARR -->
+
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="img/road-3478977.jpg" style="width:100%; height:100%">
+                </div>
+                <a href="#user"><img class="circle" src="img/paralax/moto3.png" style="width:100%; height:100%; padding-left: 75px; padding-top: 50px;"></a>
+                <a href="#name"><span class="white-text name">John Doe</span></a>
+                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div>
+        </li>
+        <li><a class="waves-effect" href="http://localhost:3000/perfil"><i class="material-icons">cloud</i>Mi Perfil</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Amigos</a></li>
+        <li><a class="waves-effect" href="#!">Mis Amigos</a></li>
+        <li><a class="waves-effect" href="#!">Crea un grupo</a></li>
+        <li><a class="waves-effect" href="#!">Invita a tus Amigos</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Rutas</a></li>
+        <li><a class="waves-effect" href="http://localhost:3000/rutas#">Rutas</a></li>
+        <ul>
+            <li><a href="http://localhost:3000/rutas#">Tus Rutas</a></li>
+            <li><a href="http://localhost:3000/rutas#">Descubre</a></li>
+            <li><a href="http://localhost:3000/rutas#">Mapas</a></li>
+        </ul>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Retos</a></li>
+        <li><a class="waves-effect" href="#!">Retos</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Garaje</a></li>
+        <li><a class="waves-effect" href="http://localhost:3000/garaje">Garaje</a></li>
+    </ul>
+
+    <div class="contenedor-video ">
+        <video class="responsive-video" autoplay loop muted src="../img/Pexels Videos 1333384.mp4"></video>
+    </div>
+
+    <div class="capa-efecto">
+    </div>
+    <!-- botón de menú -->
+    <a href="#" data-target="slide-out" class="sidenav-trigger btn tooltipped" data-position="bottom" data-tooltip="Abrir el Menú Lateral"><i
+            class="material-icons">menu</i></a>
+
+
+    <!-- Comienza el perfil  -->
+    <div class="row">
+        <div class="col s12 center align datos">
+            <span>
+                <h1 class="miPerfil">Mi Perfil</h1>
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="s3  datos center-align">
+            <div>
+                <img class="circle responsive-img fotoPerfil" src="../img/perfil2.png">
+            </div>
+            <div>
+                <a href="#name"><span class="white-text name">Nombre:</span><span class="white-text name">Johh</span></span></a>
+            </div>
+            <div>
+                <a href="#lastname"><span class="white-text lastname">Apellido:</span><span class="white-text name">Doe</span></span></a>
+            </div>
+            <div>
+                <a href="#email"><span class="white-text name">Email:</span><span class="white-text name">jdandturk@gmail.com</span></span></a>
+            </div>
+            <div class="col s4 center">
+                <div class="aling-center">
+                    <div class="col s12 center garaje"> <a href="" class=" center">Garaje</a></div>
+                    <!-- ESTE ELEMENTO ES PARA HACER UNA NUEVO MENU FUTURO-->
+                    <a href="http://localhost:3000/garaje"> <img class="responisve-img fotoGaraje center" src="../img/bike.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col s4 center">
+                <div class="aling-center">
+                    <div class="col 12 center rutasPerfil">
+                        <div><a href="http://localhost:3000/rutas#" class=" center">Tus Rutas</a></div>
+                        <a href="http://localhost:3000/rutas#"> <img class="responisve-img fotoRuta center" src="../img/carrtera.png"
+                                alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4 center">
+                <div class="aling-center">
+                    <div class="col 12 center rutasPerfil">
+                        <div><a href="#" class=" center">Retos</a></div>
+                        <a href="#"> <img class="responisve-img fotoRuta center" src="../img/saludo.png"
+                                alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <!-- PREPARATIVOS PARA LA API GOOGLE MAPS  -->
+    <!-- <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0u6OxGV5-ZrORirsAQKlcVGJLnoSclwA&callback=initMap">
+    </script> -->
+    <script src="js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/mainPpa.js"></script>
+
+</body>
+
+</html>

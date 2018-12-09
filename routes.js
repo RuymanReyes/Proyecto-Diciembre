@@ -13,6 +13,21 @@ app.get('/prueba', function (req, res) {
 app.get('/google', function (req, res) {
     res.render('experimento626-3');
 });
+app.get('/perfil', function (req, res) {
+    res.render('perfil');
+});
+app.get('/rutasPpal', function (req, res) {
+    res.render('rutasPpal');
+});
+app.get('/garaje', function (req, res) {
+    res.render('garaje');
+});
+app.get('/retos', function (req, res) {
+    res.render('retos');
+});
+app.get('/descubre', function (req, res) {
+    res.render('descubre');
+});
 
 //añadir proyectos
 //proyectos es una ruta quele damos que nosotros queremos, la unica requerida es que quiera 

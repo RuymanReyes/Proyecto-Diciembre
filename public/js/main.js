@@ -15,9 +15,9 @@ $(document).ready(function () {
             }
         });
     });
+
+
     //MODIFICAR LOS REGISTROS 
-
-
 
     lista.on('click', '.modificar', function () {
         let datosCard = $(this).parent();
@@ -35,13 +35,7 @@ $(document).ready(function () {
         $('#descripcionUpdate').val(descripcion);
         $('#fechaUpdate').val(fecha);
         $('#idUpdate').val(id);
-   
-
     });
-  
-   
-
-        
 
     
     $('#botonUpdate').on('click',function(){
@@ -73,8 +67,6 @@ $(document).ready(function () {
             location.reload();
         });
     })
-        
-    
 
     boton.on('click', function () {
         let data = $('#insert').serialize();
@@ -85,12 +77,13 @@ $(document).ready(function () {
         let descripcion = $ ('#descripción').val()
         let fecha = $ ('#fecha').val()
         let error= "";
-        if (!nombre||nombre==""||!origen||origen==""||!destino|| destino ==""|| !descripcion || descripcion == ""|| !fecha||fecha == ""){
+        if (nombre==""||origen==""|| destino ==""|| descripcion == ""||fecha == ""){
             error= "Por favor revise sus datos"
             $('.error').append(error)
         }
         else{
-         
+        $('.error').remove()
+
         $.post('http://localhost:3000/vulcan/add', data, function (ruta) {
             lista.append(
                 '<div class="col s12 m6 l4 xl3">' +
@@ -113,6 +106,7 @@ $(document).ready(function () {
         });
     }
     });
+
 
 //agregarlo a pantalla 
 $.get('http://localhost:3000/vulcan/', function (response) {
