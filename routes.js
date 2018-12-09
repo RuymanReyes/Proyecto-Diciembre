@@ -7,8 +7,8 @@ app.get('/', function (req, res) {
 app.get('/rutas', function (req, res) {
     res.render('rutas');
 });
-app.get('/prueba', function (req, res) {
-    res.render('prueba');
+app.get('/portada', function (req, res) {
+    res.render('portada');
 });
 app.get('/google', function (req, res) {
     res.render('experimento626-3');

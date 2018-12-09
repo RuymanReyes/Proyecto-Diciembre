@@ -61,7 +61,7 @@ $(document).ready(function () {
             '<p> Destino: <span class="destino">' + ruta.destino + '</span></p>' +
             '<p> descrición: <span class="descripcion">' + ruta.descripcion + '</span></p>' +
             '<p> fecha: <span class="fecha">' + ruta.fecha + '</span></p>' +
-            '<a class=" modificar waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>'+
+            '<a class=" modificar waves-effect waves-light btn modal-trigger" href="#modal1">Modificar</a>'+
             '</div>' +
             '</div>');
             location.reload();
@@ -98,7 +98,7 @@ $(document).ready(function () {
                 '<p> Destino: <span class="destino">' + ruta.destino + '</span></p>' +
                 '<p> descrición: <span class="descripcion">' + ruta.descripcion + '</span></p>' +
                 '<p> fecha: <span class="fecha">' + ruta.fecha + '</span></p>' +
-                '<a class=" modificar waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>' +
+                '<a class=" modificar waves-effect waves-light btn modal-trigger" href="#modal1">Modificar</a>' +
 
                 '</div>' +
                 '</div>')
@@ -124,7 +124,7 @@ $.get('http://localhost:3000/vulcan/', function (response) {
             '<p> Destino: <span class="destino">' + ruta.destino + '</span></p>' +
             '<p> descrición: <span class="descripcion">' + ruta.descripcion + '</span></p>' +
             '<p> fecha: <span class="fecha">' + ruta.fecha + '</span></p>' +
-            '<a class=" modificar waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>' +
+            '<a class=" modificar waves-effect waves-light btn modal-trigger" href="#modal1">Modificar</a>' +
             '</div>' +
             '</div>');
 
