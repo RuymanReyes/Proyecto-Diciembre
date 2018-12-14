@@ -1,5 +1,41 @@
-var con = require('./config');
 var app = require('./app');
+var ProjectController = require('./controllers/projectController');
+var UsersController = require('./controllers/users');
+var auth = function (req, res, next) {
+    if (req.session.user)
+        return next(); else
+        return res.sendStatus(404);
+};
+
+
+
+
+//añadir proyectos
+app.post('/vulcan/add', ProjectController.addProject);
+//consultar proyectos
+app.get('/vulcan', ProjectController.getProjects);
+//borrar rutas
+app.post('/vulcan/delete', ProjectController.deleteProjects);
+//modificar proyectos
+app.post('/vulcan/update', ProjectController.updateProject);
+
+//LLamada a home.ejs
+app.get('/home', auth, function (req, res) {
+    res.render('home', {
+        email: req.session.user.email
+    });
+});
+//Meter archivo en la pagina en la zona garaje y usuarios
+var fs = require('fs');
+var multipart = require('connect-multiparty');
+var multipartMiddleware = multipart({ uploadDir: './public/img/img_download' })
+
+app.post('/vulcan/add', multipartMiddleware, function (req, res) {
+    let oldPath = req.files.foto.path;
+    let newPath = './public/img/img_download' + req.files.foto.originalFilename; fs.rename(oldPath, newPath, function (err) {
+    });
+});
+
 // Rutas 
 app.get('/', function (req, res) {
     res.render('index');
@@ -29,97 +65,20 @@ app.get('/descubre', function (req, res) {
     res.render('descubre');
 });
 
-//añadir proyectos
-//proyectos es una ruta quele damos que nosotros queremos, la unica requerida es que quiera 
-// tener un sentido con lo que estamos haciendo. lo que añade es proyecto a la BD
+// REGISTRO DE USUARIOS 
 
-app.post('/vulcan/add', function (req, res) {
-    let body = req.body;
-    console.log (body)
-    let sql = `INSERT INTO rutas (nombre, origen, destino, descripcion, fecha) VALUES ('${body.name}',
-     '${body.origin}', '${body.destiny}','${body.description}','${body.date}')`;    
-    con.query(sql, function (err, result) {
-        if (err) {
-            res.send(err);
-        }
-        else {
-            console.log(result)
-            let proyecto = {
-                id: result.insertId,
-                nombre: body.name,
-                origen: body.origin,
-                destino: body.destiny,
-                descripcion: body.description,
-                fecha: body.date,
-            }
- 
-            res.send(proyecto);
-        }
-    });
-});
-
-//CONSULTA DE PROYECTOS 
-app.get('/vulcan', function (req, res) { // el nombre de proyecto puede ser cualquiera, en este caso es el proyecto. 
-    let sql = 'SELECT * from rutas';
-    con.query(sql, function (err, result) {
-        if (err) {
-            res.send(err);
-        }
-        else {
-            res.send(result);
-         
-        }
-    });
-})
-
-//ELIMINAR PROYECTOS 
-app.post('/vulcan/delete', function (req, res) {
-    console.log(req.body)
-    let sql = `DELETE FROM rutas where id = '${req.body.id}'`;
-    console.log(sql)
-    con.query(sql, function (err, result) {
-        if (err) {
-            console.log(err)
-            res.send(err);
-        }
-        else {
-            res.send(result);
-        }
-    });
-})
-//MODIFICAR REGISTROS 
-// mirar como lo hace en un solo update. antes de hacerlo comprobar que los campos no esten en blanco. 
-
-app.post('/vulcan/update', function (req, res) {
-    let body= req.body;
-    let sql = '';
-     
-    if(body.origin && body.destiny && body.description && body.date &&body.name){
-        sql= `UPDATE rutas set origen = '${body.origin}', destino = '${body.destiny}', descripcion = '${body.description}', fecha = '${body.date}', nombre='${body.name}' where id ='${body.id}'`;
-    } 
-      
-    con.query(sql, function (err, result) {
-        if (err) {
-            res.send(err);
-        }
-        else {
-            let proyecto = {
-                item: "",
-                result: result
-            };
-            req.body.name ? proyecto.item = req.body.name : proyecto.item = req.body.category
-            console.log(proyecto);
-            res.send(proyecto);
-        }
-    });
-});
+app.post('/users/register', UsersController.registerUser);
+app.post('/users/login', UsersController.loginUser);
 
 
-module.exports = con;
+
+
+
+
+
+
+
+
+
+
 module.exports = app; 
-
-
-
-
-
-// JOSE PREGUNTAR 

@@ -1,5 +1,16 @@
 $(document).ready(function () {
-
+  // $('#formulario').on('submit', function (e) { 
+  //   e.preventDefault();
+  //   let formulario = new FormData($(this)[0]); 
+  //   $.ajax({
+  //   type: 'POST',
+  //   url: '/vulcan/add', 
+  //   data: formulario,
+  //   contentType:false, 
+  //   cache:false, 
+  //   processData: false
+  //   }); 
+  // });
   $(function() {
   $('#file-input').change(function(e) {
       addImage(e); 
@@ -22,4 +33,5 @@ $(document).ready(function () {
       $('#imgSalida').attr("src",result);
      }
     });
+
   });
