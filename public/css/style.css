@@ -153,17 +153,17 @@ position: relative;
 overflow: hidden; }
 
 .layer {
-position: absolute; }
+  position: absolute; }
 .layer div {
- -webkit-transform: translate3d(0,0,0);
- -moz-transform: translate3d(0,0,0);
- transform: translate3d(0,0,0);
- -webkit-transform-style: preserve-3d;
- -moz-transform-style: preserve-3d;
- transform-style: preserve-3d;
- -webkit-backface-visibility: hidden;
- -moz-backface-visibility: hidden;
- backface-visibility: hidden; }
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden; }
 
 .title {
 font-size: 3em;
@@ -174,7 +174,7 @@ width: 100%;
 top: 42%; }
 
 .background {
-background: url(../public/img/fondo_motos1.png) no-repeat 50% 100%;
+background: url(../img/img_parallax/fondo_motos1.png) no-repeat 50% 100%;
 bottom: 96px;
 background-size: cover;
 position: absolute;
@@ -194,7 +194,7 @@ margin: 0px -64px;
 background-size: 128px 224px;
 height: 224px;
 width: 128px;
-background-image: url(../public/img/paralax/moto3.png);
+background-image: url(../img/arbol.png);
 background-repeat: no-repeat;
 bottom: 64px;
 position: absolute;
@@ -215,7 +215,7 @@ left: -100%; }
  top: 100%;
  left: 0; }
 .wave.plain {
- background-image: url(../public/img/paralax/moto3.png); }
+ background-image: url(../img/img_parallax/paralax/moto3.png); }
 .wave.paint {
  background-image: url(https://wagerfield.github.io/parallax/assets/images/wave-paint.png); }
 
@@ -581,12 +581,13 @@ top: -10%; }
  -moz-transform: scale(0.5);
  transform: scale(0.5); }
 
-@media all and (min-width: 400px) {
+@media screen and (min-width: 400px) {
 html {
  font-size: 12px; }
 
 .wrapper {
- min-height: 360px; }
+ min-height: 310px;
+width: 1900px; }
 
 .about .panel header:before {
  background-size: 66px 90px; }
@@ -1613,3 +1614,41 @@ transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1); }
  -moz-transform: rotateZ(-10deg);
  transform: rotateZ(-10deg); } }
 
+.intro{
+  margin-top:450px;
+  font-size:45px;
+  font-family: 'Gloria Hallelujah', cursive;
+  position: relative;
+  z-index: 1000;
+}
+.entrada{
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 32px;
+  color:red;
+}
+
+@media screen and (max-width:312px){
+.entrada {
+    margin-left: 450px;
+}
+}
+@media screen and (max-width:600px) and (min-width:313px){
+.entrada {
+    margin-left: 325px;
+}
+}
+@media screen and (max-width:1024px) and (min-width:601px){
+.entrada {
+    margin-left: 800px;
+}
+}
+@media screen and (max-width:1400px) and (min-width:1024px){
+.entrada {
+    margin-left:750px;
+}
+}
+@media screen and (max-width:1900px) and (min-width:1400px){
+.entrada {
+    margin-left:400px;
+}
+}

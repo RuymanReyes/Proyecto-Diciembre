@@ -1,5 +1,41 @@
-var con = require('./config');
 var app = require('./app');
+var ProjectController = require('./controllers/projectController');
+var UsersController = require('./controllers/users');
+var auth = function (req, res, next) {
+    if (req.session.user)
+        return next(); else
+        return res.sendStatus(404);
+};
+
+
+
+
+//añadir proyectos
+app.post('/vulcan/add', ProjectController.addProject);
+//consultar proyectos
+app.get('/vulcan', ProjectController.getProjects);
+//borrar rutas
+app.post('/vulcan/delete', ProjectController.deleteProjects);
+//modificar proyectos
+app.post('/vulcan/update', ProjectController.updateProject);
+
+//LLamada a home.ejs
+app.get('/home', auth, function (req, res) {
+    res.render('home', {
+        email: req.session.user.email
+    });
+});
+//Meter archivo en la pagina en la zona garaje y usuarios
+var fs = require('fs');
+var multipart = require('connect-multiparty');
+var multipartMiddleware = multipart({ uploadDir: './public/img/img_download' })
+
+app.post('/vulcan/add', multipartMiddleware, function (req, res) {
+    let oldPath = req.files.foto.path;
+    let newPath = './public/img/img_download' + req.files.foto.originalFilename; fs.rename(oldPath, newPath, function (err) {
+    });
+});
+
 // Rutas 
 app.get('/', function (req, res) {
     res.render('index');
@@ -7,106 +43,32 @@ app.get('/', function (req, res) {
 app.get('/rutas', function (req, res) {
     res.render('rutas');
 });
-app.get('/prueba', function (req, res) {
-    res.render('prueba');
+app.get('/portada', function (req, res) {
+    res.render('portada');
+});
+app.get('/google', function (req, res) {
+    res.render('experimento626-3');
+});
+app.get('/perfil', function (req, res) {
+    res.render('perfil');
+});
+app.get('/rutasPpal', function (req, res) {
+    res.render('rutasPpal');
+});
+app.get('/garaje', function (req, res) {
+    res.render('garaje');
+});
+app.get('/retos', function (req, res) {
+    res.render('retos');
+});
+app.get('/descubre', function (req, res) {
+    res.render('descubre');
 });
 
-//añadir proyectos
-//proyectos es una ruta quele damos que nosotros queremos, la unica requerida es que quiera 
-// tener un sentido con lo que estamos haciendo. lo que añade es proyecto a la BD
+// REGISTRO DE USUARIOS 
 
-app.post('/vulcan/add', function (req, res) {
-    let body = req.body;
-    let sql = `INSERT INTO rutas (nombre, origen, destino, descripcion) VALUES ('${body.name}',
-     '${body.origin}', '${body.destiny}','${body.description}')`;
-    // vamos a crear una variable de scope local,
-    // si queremos añadir
-    // un valor extra lo hacemos igual que name,
-    //si lo que queremos es guardar todo lo podemos meter en una variable, let  body= rq.body
-    //hay que hacer una comprobación de todos los datos que estamos enviando y recibiendo para 
-    //comprobar que recibimos. para evitar problemas. estos datos los recogemos del cuerpo de la petición. 
-    con.query(sql, function (err, result) {
-        if (err) {
-            res.send(err);
-        }
-        else {
-            console.log(result)
-            let proyecto = {
-                id: result.insertId,
-                nombre: body.name,
-                origen: body.origin,
-                destino: body.destiny,
-                descripcion: body.description,
-            }
-            console.log(proyecto)
-            res.send(proyecto);
-        }
-    });
-});
-
-//CONSULTA DE PROYECTOS 
-app.get('/vulcan', function (req, res) { // el nombre de proyecto puede ser cualquiera, en este caso es el proyecto. 
-    let sql = 'SELECT * from rutas';
-    con.query(sql, function (err, result) {
-        if (err) {
-            res.send(err);
-        }
-        else {
-            res.send(result);
-            console.log
-        }
-    });
-})
-
-//ELIMINAR PROYECTOS 
-app.post('/vulcan/delete', function (req, res) {
-    console.log(req.body)
-    let sql = `DELETE FROM rutas where id = '${req.body.id}'`;
-    console.log(sql)
-    con.query(sql, function (err, result) {
-        if (err) {
-            console.log(err)
-            res.send(err);
-        }
-        else {
-            res.send(result);
-        }
-    });
-})
-//MODIFICAR REGISTROS 
-app.post('/vulcan/update', function (req, res) {
-    let sql = '';
-    if (req.body.description){
-        sql = `UPDATE rutas set descripcion='${req.body.description}'
-    where id = '${req.body.id}'`;
-    }
-    else if(req.body.origin){
-        sql = `UPDATE rutas set origen='${req.body.origin}'
-    where id = '${req.body.id}'`;
-    }
-    else if(req.body.destiny){
-        sql = `UPDATE rutas set destino='${req.body.destiny}'
-    where id = '${req.body.id}'`;
-    }
-     else{
-        sql = `UPDATE rutas set nombre='${req.body.name}'
-    where id = '${req.body.id}'`;
-    }
-    con.query(sql, function (err, result) {
-        if (err) {
-            res.send(err);
-        }
-        else {
-            let proyecto = {
-                item: "",
-                result: result
-            };
-            req.body.name ? proyecto.item = req.body.name : proyecto.item = req.body.description //expresion ternarias
-            console.log(proyecto)
-            res.send(proyecto);
-        }
-    });
-});
+app.post('/users/register', UsersController.registerUser);
+app.post('/users/login', UsersController.loginUser);
 
 
 
@@ -116,5 +78,7 @@ app.post('/vulcan/update', function (req, res) {
 
 
 
-module.exports = con;
+
+
+
 module.exports = app; 

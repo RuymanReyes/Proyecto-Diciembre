@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/materialize.css">
     <link rel="stylesheet" href="../css/estilo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Finger+Paint|Frijole|Gamja+Flower|Gloria+Hallelujah|Indie+Flower|Permanent+Marker|Rock+Salt|Unlock" rel="stylesheet">
     <title>Vulcan Route</title>
 </head>
 
@@ -16,61 +17,139 @@
     <!-- NAV BARR -->
 
     <ul id="slide-out" class="sidenav">
-        <li>
-            <div class="user-view">
-                <div class="background">
-                    <img src="img/road-3478977.jpg" style="width:100%; height:100%">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="img/road-3478977.jpg" style="width:100%; height:100%">
+                    </div>
+                    <a href="#user"><img class="circle" src="img/paralax/moto3.png" style="width:100%; height:100%; padding-left: 75px; padding-top: 50px;"></a>
+                    <a href="#name"><span class="white-text name">John Doe</span></a>
+                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                 </div>
-                <a href="#user"><img class="circle" src="img/paralax/moto3.png" style="width:100%; height:100%; padding-left: 75px; padding-top: 50px;"></a>
-                <a href="#name"><span class="white-text name">John Doe</span></a>
-                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-            </div>
-        </li>
-        <li><a class="waves-effect" href="#!"><i class="material-icons">cloud</i>Mi Perfil</a></li>
-        <li><a class="waves-effect" href="#!">Mis Amigos</a></li>
-        <!-- <li>
-                  <div class="divider"></div>
-              </li>
-              <li><a class="subheader">Subheader</a></li> -->
-        <li><a class="waves-effect" href="#!">Rutas</a></li>
-        <li><a class="waves-effect" href="#!">Retos</a></li>
-        <li><a class="waves-effect" href="#!">Descubre</a></li>
-    </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </li>
+            <li><a class="waves-effect" href="http://localhost:3000/perfil"><i class="material-icons">cloud</i>Mi Perfil</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Amigos</a></li>
+            <li><a class="waves-effect" href="#!">Mis Amigos</a></li>
+            <li><a class="waves-effect" href="#!">Crea un grupo</a></li>
+            <li><a class="waves-effect" href="#!">Invita a tus Amigos</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Rutas</a></li>
+            <li><a class="waves-effect" href="http://localhost:3000/rutas#">Rutas</a></li>
+            <ul>
+                <li><a href="http://localhost:3000/rutas#">Tus Rutas</a></li>
+                <li><a href="http://localhost:3000/descubre">Descubre</a></li>
+                <li><a href="http://localhost:3000/rutas#">Mapas</a></li>
+            </ul>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Retos</a></li>
+            <li><a class="waves-effect" href="#!">Retos</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Garaje</a></li>
+            <li><a class="waves-effect" href="http://localhost:3000/garaje">Garaje</a></li>
+        </ul>
+   
     <div class="contenedor-video ">
         <video class="responsive-video" autoplay loop muted src="../img/Pexels Videos 1333384.mp4"></video>
     </div>
+
     <div class="capa-efecto">
     </div>
+    <a href="#" data-target="slide-out" class="sidenav-trigger btnMenu tooltipped" data-position="bottom" data-tooltip="Abrir el Menú Lateral"><i class="material-icons">menu</i></a>
+
+<!-- COMIENZO DEL FORMULARIO DE REGISTRO PARA CREAR RUTAS -->
+
+
     <div class="row formulario" style="z-index:1">
-        <h1 class="col xl12 l12 m12 s12 center-aling">Crea tus rutas</h1>
-        <div class="col xl6">
-            <div class="input-field white-text">
-                <input placeholder="Inserte un nombre de la ruta" name="name" id="destino" type="text" class="validate">
-                <label for="name">Nombre:</label>
-        </div>
-        <div class="input-field">
-                <input placeholder="Indique un origen" name="origin" id="destino" type="text" class="validate">
-                <label for="origen">Origen:</label>
-        </div>
-        <div class="input-field">
-                <input placeholder="Indique un destino" name="destiny" id="destino" type="text" class="validate">
-                <label for="destino">Destino:</label>
-        </div>
-        <div class="input-field">
-                <input placeholder="Descripción de la Ruta " name="description" id="descripcion" type="text" class="validate">
-                <label for="descripcion">Descripción:</label>
-        </div>
-        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-        <a class="waves-effect waves-teal btn-flat white-text">Guardar</a>
-
-        </div>
-        
-
+        <h1 class=" titular col xl12 l12 m12 s12 center-aling">Crea tus rutas</h1>
+        <!-- introduce aquí el error de validación -->
+        <div class=" error col 12 l12 m12 s12 center-aling red-text text-dark-3" style="font-size:30px; text-align: center" ></div>
+        <form id="insert">
+            <div class="col xl6">s
+                <div class="input-field ">
+                    <input placeholder="Inserte un nombre de la ruta" name="name" id="nombre" type="text" class="white-text validate">
+                    <label for="name">Nombre:</label>
+                </div>
+                <div class="input-field">
+                    <input placeholder="Indique un origen" name="origin" id="origen" type="text" class="white-text validate">
+                    <label for="origen">Origen:</label>
+                </div>
+                <div class="input-field">
+                    <input placeholder="Indique un destino" name="destiny" id="destino" type="text" class="white-text validate">
+                    <label for="destino">Destino:</label>
+                </div>
+                <div class="input-field">
+                    <input placeholder="Descripción de la Ruta " name="description" id="descripcion" type="text" class="white-text validate">
+                    <label for="descripcion">Descripción:</label>
+                </div>
+                <div class="input-field">
+                    <input placeholder="Fecha de la Ruta" name="date" id="fecha" type="text" class="white-text validate">
+                    <label for="fecha">Fecha:</label>
+                </div>
+                <a id="enviarInsert" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </form>
     </div>
-    <body>
 
-        <script src="js/materialize.min.js"></script>
-        <script src="js/mainPpa.js"></script>
-        <script src="js/lib/jquery-3.3.1.min.js"></script>
-    </body>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Introduce los cambios en tu ruta</h4>
+            <form id="insertModal">
+                <div class="input-field ">
+                    <input placeholder="" name="id" id="idUpdate" type="hidden" class="validate">
+                </div>
+                <div class="input-field ">
+                    <input placeholder="" name="name" id="nombreUpdate" type="text" class="validate">
+                    <label for="name">Nombre:</label>
+                </div>
+                <div class="input-field">
+                    <input placeholder="" name="origin" id="origenUpdate" type="text" class=" validate">
+                    <label for="origen"></label>
+                </div>
+                <div class="input-field">
+                    <input placeholder="" name="destiny" id="destinoUpdate" type="text" class="validate">
+                    <label for="destino">Destino:</label>
+                </div>
+                <div class="input-field">
+                    <input placeholder="" name="description" id="descripcionUpdate" type="text" class="validate">
+                    <label for="descripcion">Descripción:</label>
+                </div>
+                <div class="input-field">
+                    <input placeholder="" name="date" id="fechaUpdate" type="text" class="validate">
+                    <label for="fecha">Fecha:</label>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" id="botonUpdate" class="modal-close waves-effect waves-green btn-flat">Realizar Cambios</a>
+        </div>
+    </div>
+    </div>
+
+    <div id="listaProyectos">
+        <div class="row">
+        </div>
+    </div>
+  
+
+
+     <script src="js/lib/jquery-3.3.1.min.js"></script>
+<!-- PREPARATIVOS PARA LA API GOOGLE MAPS  -->
+    <!-- <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0u6OxGV5-ZrORirsAQKlcVGJLnoSclwA&callback=initMap">
+    </script> -->
+    <script src="js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/mainPpa.js"></script>
+
+</body>
+
+</html>

@@ -2,8 +2,16 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
-const port= 3000;
+const port = 3000;
 var app = express();
+//middleware de cookies
+var session = require('express-session');
+app.use(session({
+    secret:'cadena aleatoria', 
+    resave:true, 
+    saveUninitialized:true
+}));
+
 // configuración de archivos
 // donde se aloja los archivos estaticos
 // donde se alojan las vistas
@@ -15,10 +23,12 @@ app.set('views', __dirname + '/public/views');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html')
 //middleware
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 //creacion del servidor 
-app.listen(port, () =>{
+app.listen(port, () => {
     console.log('Servidor corriendo correctamente');
 });
+
+
 module.exports = app;

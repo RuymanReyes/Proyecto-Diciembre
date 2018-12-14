@@ -1,0 +1,63 @@
+.fotoGaraje{
+    width: 300px;
+    height: 300px;
+}
+.fotoRuta{
+    width: 400px;
+    height: 300px;
+}
+.fotoperfil{
+    width: 25%;
+}
+.garaje{
+    font-size: 4rem;
+
+}
+.rutasPerfil{
+    font-size: 4rem;
+
+}
+.datos{
+    font-family: 'Cabin Sketch', cursive;  
+    font-size: 3rem;
+}
+.icon{
+    font-size: 4rem;
+}
+.miPerfil{
+    font-size: 6rem;
+    margin-top: 0px;
+    margin-bottom: 100px;
+}
+#imgSalida{
+    width: 50%;
+    height:50%;    
+}
+#file-input{
+    font-size: 2rem;
+    font-family: 'Cabin Sketch', cursive;  
+}
+.agregar{
+    font-size: 3rem;
+    color:red
+}
+.btnMenu, {
+    text-decoration: none;
+    color: #fff;
+     background-color: #dd2c00;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+  }
+  .imagen{
+      width: 400px;
+      height: 600px;
+  }
+  .card{
+      margin-right: 15px;
+  }
+  .col.s4 {
+      width: 32% !important;
+  }
