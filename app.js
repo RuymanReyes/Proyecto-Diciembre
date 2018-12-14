@@ -30,5 +30,12 @@ app.listen(port, () => {
     console.log('Servidor corriendo correctamente');
 });
 
+// EXPRESS SESSION, COOKIE aquí crea la cookie automaticamente
 
+app.use(session({
+    secret:'cadena aleatoria',
+    resave:true,
+    saveUninitialized: true,
+    cookie:{maxAge: 7 * 24 * 60 * 60 * 100}
+}));
 module.exports = app;
